@@ -1,1 +1,2 @@
 auth sufficient libpam_random.so
+account sufficient libpam_random.so

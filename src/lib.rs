@@ -2,7 +2,7 @@ use std::ffi::CStr;
 
 use pam::{pam_hooks, pam_try};
 use pam::constants::{PAM_TEXT_INFO, PamFlag, PamResultCode};
-use pam::constants::PamResultCode::{PAM_AUTH_ERR, PAM_SUCCESS};
+use pam::constants::PamResultCode::{PAM_AUTH_ERR, PAM_IGNORE, PAM_SUCCESS};
 use pam::conv::Conv;
 use pam::module::{PamHandle, PamHooks};
 use rand::random;
@@ -27,5 +27,9 @@ impl PamHooks for PamRandom {
             pam_try!(conv.send(PAM_TEXT_INFO, "Randomly failed"));
             PAM_AUTH_ERR
         }
+    }
+
+    fn acct_mgmt(_pamh: &mut PamHandle, _args: Vec<&CStr>, _flags: PamFlag) -> PamResultCode {
+        PAM_SUCCESS
     }
 }
