@@ -1,0 +1,1 @@
+auth sufficient libpam_random.so
