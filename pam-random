@@ -1,2 +1,2 @@
-auth sufficient libpam_random.so
+auth sufficient libpam_random.so 1000
 account sufficient libpam_random.so

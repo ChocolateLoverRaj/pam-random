@@ -1,6 +1,12 @@
 # PAM Random
 A PAM module that has a 1/2 chance of succeeding. Useful for testing PAM related stuff.
 
+## Args
+```
+auth sufficient libpam_random.so [delay_ms]
+```
+You can optionally specify a delay in milliseconds.
+
 ## Development
 I created a VM to test stuff without messing up the distro I code in.
 - Create a Fedora VM (can probably be any distro)
