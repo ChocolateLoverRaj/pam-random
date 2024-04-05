@@ -8,7 +8,14 @@ auth sufficient libpam_random.so [delay_ms]
 You can optionally specify a delay in milliseconds.
 
 ## Development
-I created a VM to test stuff without messing up the distro I code in.
+### NixOS
+- Install [`nix-direnv`](https://github.com/nix-community/nix-direnv)
+- Run `direnv allow`. This should setup Rust and other dependencies needed
+- Run `cargo b`
+- Follow instructions in `configuration.nix`
+
+### VM
+To test stuff without messing up the distro I code in.
 - Create a Fedora VM (can probably be any distro)
 - Create a user named `test`
 - Enable SSH server
